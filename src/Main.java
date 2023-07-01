@@ -6,6 +6,7 @@ public class Main {
 
     private static final List<Person> persons = new ArrayList<>();
     private static final Scanner scanner = new Scanner(System.in);
+    private static Long lastId = 3L;
 
     public static void main(String[] args) {
         int menu;
@@ -213,15 +214,18 @@ public class Main {
     }
 
     private static Long getValidId() {
-        System.out.print("ID: ");
-        Long id = scanner.nextLong();
-        scanner.nextLine();
+//        System.out.print("ID: ");
+//        Long id = scanner.nextLong();
+//        scanner.nextLine();
+//
+//        for (Person p : persons) {
+//            if (p.getId().equals(id)) {
+//                return null;
+//            }
+//        }
+//        return id;
 
-        for (Person p : persons) {
-            if (p.getId().equals(id)) {
-                return null;
-            }
-        }
-        return id;
+        lastId++; // Increment the last ID
+        return lastId;
     }
 }
